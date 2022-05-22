@@ -40,11 +40,12 @@
 <body>
     <p id="wtf">Введи ниже данные которые хочешь отправить боту:</p>
     <input type="text" id="tg-data">
+    <button type="button" id="help-button">Помощь</button>
 </body>
 
 <script>
     let tg = window.Telegram.WebApp; //Webapp init
-    tg.MainButton.text = "Changed Text";
+    tg.MainButton.text = "Отправить данные";
     tg.expand(); //расширяем на все окно
     tg.MainButton.show();
     function myFunction() {
@@ -55,6 +56,7 @@
         }
       }
     Telegram.WebApp.onEvent('mainButtonClicked', function(){
+        var xdata = document.getElementById("tg-data").value;
         tg.sendData(xdata); 
         //при клике на основную кнопку отправляем данные в строковом виде
      });
