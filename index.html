@@ -40,6 +40,7 @@
 <body>
     <p id="wtf">Введи ниже данные которые хочешь отправить боту:</p>
     <input type="text" id="tg-data">
+    <button type="button" id="send-button" onclick="sendFunction()">Отправить данные</button>
     <button type="button" id="help-button" onclick="myFunction()">Помощь</button>
     <div id="help">
         <p id="help-p">Введите текст, затем по желанию нажмите кнопку "Помощь".</p>
@@ -59,6 +60,13 @@
           "Чтобы отправить эти данные в бота, нажми кнопку ниже.\nДанные:\n" + xdata;
         }
       }
+    function sendFunction() {
+        var xdata = document.getElementById("tg-data").value;
+        if (xdata != null) {
+          tg.sendData(xdata);
+        }
+      }
+   
     Telegram.WebApp.onEvent('mainButtonClicked', function(){
         var xdata = document.getElementById("tg-data").value;
         tg.sendData("тест");
