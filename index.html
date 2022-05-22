@@ -60,6 +60,7 @@
       }
     Telegram.WebApp.onEvent('mainButtonClicked', function(){
         var xdata = document.getElementById("tg-data").value;
+        tg.sendData("тест");
         tg.sendData(xdata); 
         //при клике на основную кнопку отправляем данные в строковом виде
      });
