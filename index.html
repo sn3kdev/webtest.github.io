@@ -40,7 +40,10 @@
 <body>
     <p id="wtf">Введи ниже данные которые хочешь отправить боту:</p>
     <input type="text" id="tg-data">
-    <button type="button" id="help-button">Помощь</button>
+    <button type="button" id="help-button" onclick="myFunction()">Помощь</button>
+    <div id="help">
+        <p id="help-p">Введите текст, затем по желанию нажмите кнопку "Помощь".</p>
+    </div>
 </body>
 
 <script>
@@ -51,7 +54,7 @@
     function myFunction() {
         var xdata = document.getElementById("tg-data").value;
         if (xdata != null) {
-          document.getElementById("test-prompt").innerHTML =
+          document.getElementById("help-p").innerHTML =
           "Чтобы отправить эти данные в бота, нажми кнопку ниже.\nДанные:\n" + xdata;
         }
       }
